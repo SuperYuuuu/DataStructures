@@ -2,7 +2,7 @@ package com.hy.offer;
 
 import java.util.ArrayList;
 
-public class demo04ArrayList {
+public class demo04PrintListFromTailToHead {
 
     public static void main(String[] args) {
         ListNode nl3 = new ListNode(3);
@@ -56,7 +56,16 @@ public class demo04ArrayList {
     }
 
     public static ArrayList<Integer> printListFromTailToHead3(ListNode listNode) {
-        return null;
+        Stack stack = new Stack(5);
+        while (listNode != null) {
+            stack.push(listNode.data);
+            listNode = listNode.next;
+        }
+        ArrayList<Integer> ret = new ArrayList<Integer>();
+        while (!stack.isEmpty()) {
+            ret.add(stack.pop());
+        }
+        return ret;
     }
 
 }
